@@ -16,16 +16,25 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-    <h1>NASA Astronomy Picture of the Day</h1>
-    <div id="date-select">
-        <label for="date-input">Select date:</label>
-        <input type="date" id="date-input">
-        <button id="get-apod-btn" onclick="getData()">Get APOD</button>
-    </div>
-    <div id="apod-container">
-        <!-- APOD content will be displayed here -->
-    </div>
+   <!-- Heading -->
+   <h1>NASA Astronomy Picture of the Day</h1>
 
-    <script src="/assets/js/main.js"></script>
+   <!-- Date Selection Form -->
+   <div id="date-select">
+       <!-- Label for date input -->
+       <label for="date-input">Select date:</label>
+       <!-- Date input field -->
+       <input type="date" id="date-input">
+       <!-- Button to trigger fetching APOD data -->
+       <button id="get-apod-btn" onclick="getData()">Get APOD</button>
+   </div>
+
+   <!-- APOD Content Container -->
+   <div id="apod-container">
+       <!-- APOD content will be displayed here -->
+   </div>
+
+   <!-- JavaScript file -->
+   <script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -1,6 +1,4 @@
-console.log( 'test this' );
-
-// async/await function to fetch APOD data
+// Async/Await function to fetch APOD data
 async function getData() {
     // NASA API key
     const apiKey = 'KzlXuuUnsYrJVHzkueLJoJYWS7evfbGwlxAsZlsl';
@@ -15,12 +13,18 @@ async function getData() {
         // Parse response as JSON
         const data = await response.json();
 
-        // Update HTML elements with APOD data
-        document.getElementById('apod-container').innerHTML = `
-            <img id="apod-image" src="${data.url}" alt="${data.title}">
-            <h2>${data.title}</h2>
-            <p>${data.explanation}</p>
-        `;
+        // Check if the APOD date is in the future
+        const today = new Date().toISOString().split('T')[0]; // Get today's date
+        if (date > today) {
+            alert('You selected a date in the future. No photo and explanation are available.');
+        } else {
+            // Update HTML elements with APOD data
+            document.getElementById('apod-container').innerHTML = `
+                <img id="apod-image" src="${data.url}" alt="${data.title}">
+                <h2>${data.title}</h2>
+                <p>${data.explanation}</p>
+            `;
+        }
     } catch (error) {
         // Log error to console if fetch fails
         console.error('Error fetching APOD data:', error);
